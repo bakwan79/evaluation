@@ -54,5 +54,16 @@
       "endOfLine" : "lf",
       "indentSize" : 2
     }
+  }, {
+    "module" : "typescript",
+    "date" : "2023-10-08T20:26:32.136159900Z",
+    "properties" : {
+      "packageName" : "com.classroom.evaluation",
+      "projectName" : "Evaluation",
+      "baseName" : "evaluation",
+      "serverPort" : 8080,
+      "endOfLine" : "lf",
+      "indentSize" : 2
+    }
   } ]
 }
