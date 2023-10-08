@@ -40,5 +40,6 @@ docker compose -f src/main/docker/postgresql.yml up -d
 - [Vue](documentation/vue.md)
 - [Postgresql](documentation/postgresql.md)
 - [Dev tools](documentation/dev-tools.md)
+- [Jpa pages](documentation/jpa-pages.md)
 
 <!-- jhipster-needle-documentation -->
