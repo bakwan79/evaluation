@@ -164,5 +164,16 @@
       "endOfLine" : "lf",
       "indentSize" : 2
     }
+  }, {
+    "module" : "spring-boot-mvc-empty",
+    "date" : "2023-10-08T20:26:36.164685400Z",
+    "properties" : {
+      "packageName" : "com.classroom.evaluation",
+      "projectName" : "Evaluation",
+      "baseName" : "evaluation",
+      "serverPort" : 8080,
+      "endOfLine" : "lf",
+      "indentSize" : 2
+    }
   } ]
 }
