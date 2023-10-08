@@ -131,5 +131,16 @@
       "endOfLine" : "lf",
       "indentSize" : 2
     }
+  }, {
+    "module" : "spring-boot",
+    "date" : "2023-10-08T20:26:35.108791100Z",
+    "properties" : {
+      "packageName" : "com.classroom.evaluation",
+      "projectName" : "Evaluation",
+      "baseName" : "evaluation",
+      "serverPort" : 8080,
+      "endOfLine" : "lf",
+      "indentSize" : 2
+    }
   } ]
 }
