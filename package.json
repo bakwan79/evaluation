@@ -1,0 +1,13 @@
+{
+  "name": "evaluation",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Evaluation",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "cacheDirectories": [
+    "node_modules"
+  ]
+}
