@@ -25,6 +25,10 @@ npm install
 ./mvnw
 ```
 
+```bash
+docker compose -f src/main/docker/postgresql.yml up -d
+```
+
 
 <!-- jhipster-needle-startupCommand -->
 
@@ -34,5 +38,6 @@ npm install
 - [Package types](documentation/package-types.md)
 - [Assertions](documentation/assertions.md)
 - [Vue](documentation/vue.md)
+- [Postgresql](documentation/postgresql.md)
 
 <!-- jhipster-needle-documentation -->

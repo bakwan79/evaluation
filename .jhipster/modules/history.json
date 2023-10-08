@@ -142,5 +142,16 @@
       "endOfLine" : "lf",
       "indentSize" : 2
     }
+  }, {
+    "module" : "postgresql",
+    "date" : "2023-10-08T20:26:35.589996400Z",
+    "properties" : {
+      "packageName" : "com.classroom.evaluation",
+      "projectName" : "Evaluation",
+      "baseName" : "evaluation",
+      "serverPort" : 8080,
+      "endOfLine" : "lf",
+      "indentSize" : 2
+    }
   } ]
 }
