@@ -87,5 +87,16 @@
       "endOfLine" : "lf",
       "indentSize" : 2
     }
+  }, {
+    "module" : "java-base",
+    "date" : "2023-10-08T20:26:33.013048900Z",
+    "properties" : {
+      "packageName" : "com.classroom.evaluation",
+      "projectName" : "Evaluation",
+      "baseName" : "evaluation",
+      "serverPort" : 8080,
+      "endOfLine" : "lf",
+      "indentSize" : 2
+    }
   } ]
 }
