@@ -1,14 +1,19 @@
 package com.classroom.evaluation.dummy.domain.student;
 
+import com.classroom.evaluation.dummy.domain.beer.BeerSellingState;
 import com.classroom.evaluation.shared.error.domain.Assert;
 
 public class Student {
 
+  public enum StudentStatus {
+    ACTIVE,
+    INACTIVE,
+  }
+
   private final com.classroom.evaluation.dummy.domain.student.StudentId id;
   private final StudentName name;
   private final StudentEmail email;
-
-  // ... any other attributes you'd like to include
+  private StudentStatus status;
 
   private Student(StudentBuilder builder) {
     assertMandatoryFields(builder);
@@ -16,14 +21,14 @@ public class Student {
     id = builder.id;
     name = builder.name;
     email = builder.email;
-    // ... initialize other attributes
+    status = builder.status;
   }
 
   private void assertMandatoryFields(StudentBuilder builder) {
     Assert.notNull("id", builder.id);
     Assert.notNull("name", builder.name);
     Assert.notNull("email", builder.email);
-    // ... assert other attributes
+    Assert.notNull("status", builder.status);
   }
 
   public static StudentIdBuilder builder() {
@@ -42,15 +47,21 @@ public class Student {
     return email;
   }
 
-  // ... getters for other attributes
+  public StudentStatus status() {
+    return status;
+  }
 
-  public static class StudentBuilder implements StudentIdBuilder, StudentNameBuilder, StudentEmailBuilder, StudentOptionalBuilder {
+  public void setInactive() {
+    status = StudentStatus.INACTIVE;
+  }
+
+  public static class StudentBuilder
+    implements StudentIdBuilder, StudentNameBuilder, StudentEmailBuilder, StudentStatusBuilder, StudentOptionalBuilder {
 
     private com.classroom.evaluation.dummy.domain.student.StudentId id;
     private StudentName name;
     private StudentEmail email;
-
-    // ... other attributes
+    private StudentStatus status;
 
     @Override
     public StudentNameBuilder id(com.classroom.evaluation.dummy.domain.student.StudentId id) {
@@ -65,12 +76,16 @@ public class Student {
     }
 
     @Override
-    public StudentOptionalBuilder email(StudentEmail email) {
+    public StudentStatusBuilder email(StudentEmail email) {
       this.email = email;
       return this;
     }
 
-    // ... setters for other attributes
+    @Override
+    public StudentOptionalBuilder status(StudentStatus status) {
+      this.status = status;
+      return this;
+    }
 
     @Override
     public Student build() {
@@ -87,7 +102,11 @@ public class Student {
   }
 
   public interface StudentEmailBuilder {
-    StudentOptionalBuilder email(StudentEmail email);
+    StudentStatusBuilder email(StudentEmail email);
+  }
+
+  public interface StudentStatusBuilder {
+    StudentOptionalBuilder status(StudentStatus status);
   }
 
   public interface StudentOptionalBuilder {

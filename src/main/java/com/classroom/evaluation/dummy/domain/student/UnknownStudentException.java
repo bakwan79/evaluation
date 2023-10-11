@@ -1,3 +1,8 @@
 package com.classroom.evaluation.dummy.domain.student;
 
-public class UnknownStudentException {}
+class UnknownStudentException extends RuntimeException {
+
+  public UnknownStudentException(StudentId id) {
+    super("Student " + id.get() + " is unknown");
+  }
+}
