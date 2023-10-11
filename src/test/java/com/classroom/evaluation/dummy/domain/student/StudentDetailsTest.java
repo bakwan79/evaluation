@@ -3,6 +3,8 @@ package com.classroom.evaluation.dummy.domain.student;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import com.classroom.evaluation.shared.error.domain.InvalidEmailException;
+import com.classroom.evaluation.shared.error.domain.MissingMandatoryValueException; // Import the correct exception
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,12 +35,15 @@ class StudentDetailsTest {
 
   @Test
   void shouldThrowExceptionWhenNameIsNull() {
-    assertThatThrownBy(() -> new StudentName(null)).isInstanceOf(IllegalArgumentException.class).hasMessage("Name cannot be null");
+    assertThatThrownBy(() -> new StudentName(null))
+      .isInstanceOf(MissingMandatoryValueException.class) // Updated exception type
+      .hasMessageContaining("The field \"name\" is mandatory"); // Updated message check
   }
 
   @Test
   void shouldThrowExceptionWhenEmailIsInvalid() {
-    assertThatThrownBy(() -> new StudentEmail("invalid-email")).isInstanceOf(IllegalArgumentException.class).hasMessage("Email is invalid");
+    assertThatThrownBy(() -> new StudentEmail("invalid-email"))
+      .isInstanceOf(InvalidEmailException.class)
+      .hasMessageContaining("Invalid email format");
   }
-  // ... Add more tests as needed
 }
